@@ -52,12 +52,57 @@ public class CubeDrone extends Drone{
 			   !super.flySpace.getOuterBoundaries().checkCubeIntersection(newCube);
 	}
 	
-	/*
+	
 	private boolean getAroundObstacle(String initialCommand)
 	{		
-
+		switch(initialCommand)
+		{
+		case "up": 
+			if(validateDronePositionAfter("left"))
+			{
+				drone.decreaseX(1);
+				if(validateDronePositionAfter("up"))
+				{
+					drone.increaseY(1);
+					return true;
+				}
+			}
+			if(validateDronePositionAfter("right"))
+			{
+				drone.increaseX(1);
+				if(validateDronePositionAfter("up"))
+				{
+					drone.increaseY(1);
+					return true;
+				}
+			}
+			if(validateDronePositionAfter("forth"))
+			{
+				drone.decreaseZ(1);
+				if(validateDronePositionAfter("up"))
+				{
+					drone.increaseY(1);
+					return true;
+				}
+			}
+			if(validateDronePositionAfter("back"))
+			{
+				drone.increaseZ(1);
+				if(validateDronePositionAfter("up"))
+				{
+					drone.increaseY(1);
+					return true;
+				}
+		}
+		break;
+		case "down":
+			break;
+		
+		}
+		
+		return false;
 	}
-	*/
+	
 	
 	@Override
 	public String moveUp() {

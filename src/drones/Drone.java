@@ -88,7 +88,7 @@ public class Drone implements ClassicDrone{
 	public String moveRight() {
 		if(validateDronePositionAfter("right"))
 		{
-			droneCoordinates[1] += 1;
+			droneCoordinates[0] += 1;
 		}
 		return getFormatedCoordinates();
 	}
